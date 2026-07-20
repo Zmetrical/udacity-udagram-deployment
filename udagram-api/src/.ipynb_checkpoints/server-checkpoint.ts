@@ -15,9 +15,13 @@ import { V0_FEED_MODELS, V0_USER_MODELS } from "./controllers/v0/model.index";
   console.log("STEP 2");
     try {
         console.log("STEP 3");
+        console.log("DB HOST:", process.env.POSTGRES_HOST);
+        console.log("DB DB:", process.env.POSTGRES_DB);
+        console.log("DB USER:", process.env.POSTGRES_USERNAME);
+        
         await sequelize.authenticate();
         console.log("Connection has been established successfully.");
-
+        console.log("STEP 4");
         await sequelize.addModels(V0_FEED_MODELS);
         await sequelize.addModels(V0_USER_MODELS);
 
@@ -25,9 +29,12 @@ import { V0_FEED_MODELS, V0_USER_MODELS } from "./controllers/v0/model.index";
         await sequelize.sync();
 
         console.log("Database Connected");
-
-    } catch (error) {
-        console.error("DATABASE STARTUP ERROR:", error);
+        
+    } catch (error: any) {
+        console.error("DATABASE STARTUP ERROR:");
+        console.error(error);
+        console.error(error.message);
+        console.error(error.stack);
     }
   console.log("STEP 7");
   console.log("Database Connected");
