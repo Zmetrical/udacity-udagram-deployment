@@ -18,14 +18,14 @@ import { V0_FEED_MODELS, V0_USER_MODELS } from "./controllers/v0/model.index";
         console.log("DB DB:", process.env.POSTGRES_DB);
         console.log("DB USER:", process.env.POSTGRES_USERNAME);
         
-//         await sequelize.authenticate();
+        await sequelize.authenticate();
         console.log("Connection has been established successfully.");
         console.log("STEP 4");
-//         await sequelize.addModels(V0_FEED_MODELS);
-//         await sequelize.addModels(V0_USER_MODELS);
+        await sequelize.addModels(V0_FEED_MODELS);
+        await sequelize.addModels(V0_USER_MODELS);
 
         console.log("STEP 5");
-//         await sequelize.sync();
+        await sequelize.sync();
 
         console.log("Database Connected");
         

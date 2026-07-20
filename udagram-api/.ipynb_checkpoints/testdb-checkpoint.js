@@ -1,11 +1,12 @@
+// testdb.js
 const { Client } = require("pg");
 
 const client = new Client({
-  host: "database-1.ctac48mugayf.ap-southeast-2.rds.amazonaws.com",
+  host: process.env.POSTGRES_HOST,
+  user: process.env.POSTGRES_USERNAME,
+  password: process.env.POSTGRES_PASSWORD,
+  database: process.env.POSTGRES_DB,
   port: 5432,
-  user: "postgres",
-  password: "Udagram123",
-  database: "postgres",
   ssl: {
     rejectUnauthorized: false
   }
