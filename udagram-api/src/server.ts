@@ -18,7 +18,6 @@ import { V0_FEED_MODELS, V0_USER_MODELS } from "./controllers/v0/model.index";
         await sequelize.authenticate();
         console.log("Connection has been established successfully.");
 
-        console.log("STEP 4");
         await sequelize.addModels(V0_FEED_MODELS);
         await sequelize.addModels(V0_USER_MODELS);
 
@@ -34,12 +33,7 @@ import { V0_FEED_MODELS, V0_USER_MODELS } from "./controllers/v0/model.index";
   console.log("Database Connected");
 
   const app = express();
-
-  app.listen(8080, () => {
-      console.log("STEP 8");
-    });
-  })();
-
+  const port = 8080;
 
   app.use(bodyParser.json());
 
