@@ -19,11 +19,11 @@ The application consists of:
 
 ### Frontend URL
 
-(http://udagram-johnkyle.s3-website-ap-southeast-2.amazonaws.com/)
+[Udagram Frontend](http://udagram-johnkyle.s3-website-ap-southeast-2.amazonaws.com/)
 
 ### Backend URL
 
-(http://udagram-api-dev-env.eba-btrbwsmu.ap-southeast-2.elasticbeanstalk.com/)
+[Udagram Backend API](http://udagram-api-dev-env.eba-btrbwsmu.ap-southeast-2.elasticbeanstalk.com/)
 
 ---
 
@@ -124,6 +124,16 @@ Variables include:
 ### Working Application
 
 ![Udagram Deployed](screenshots/udagram.png)
+
+---
+
+## Docs Folder Artifacts
+
+- [Infrastructure Description](docs/Infrastructure_description.md)
+- [Pipeline Description](docs/Pipeline_description.md)
+- [Application Dependencies](docs/Application_dependencies.md)
+- [Architecture Diagram](docs/architecture-diagram.md)
+- [Pipeline Diagram](docs/pipeline-diagram.md)
 
 ---
 
