@@ -1,65 +1,132 @@
-# Udagram
+# Udagram Deployment Project
 
-This application is provided to you as an alternative starter project if you do not wish to host your own code done in the previous courses of this nanodegree. The udagram application is a fairly simple application that includes all the major components of a Full-Stack web application.
+## Project Overview
 
-## Getting Started
+Udagram is a full-stack image sharing application.
 
-1. Clone this repo locally into the location of your choice.
-1. Move the content of the udagram folder at the root of the repository as this will become the main content of the project.
-1. Open a terminal and navigate to the root of the repo
-1. follow the instructions in the installation step
+The application consists of:
 
-The project can run but is missing some information to connect to the database and storage service. These will be setup during the course of the project
+- Angular/Ionic frontend
+- Node.js/Express backend API
+- PostgreSQL database hosted on Amazon RDS
+- Frontend hosting using Amazon S3
+- Backend hosting using AWS Elastic Beanstalk
+- CI/CD pipeline using CircleCI
 
-### Dependencies
+---
 
-```
-- Node v14.15.1 (LTS) or more recent. While older versions can work it is advisable to keep node to latest LTS version
+## Application URLs
 
-- npm 6.14.8 (LTS) or more recent, Yarn can work but was not tested for this project
+### Frontend URL
 
-- AWS CLI v2, v1 can work but was not tested for this project
+(http://udagram-johnkyle.s3-website-ap-southeast-2.amazonaws.com/)
 
-- A RDS database running Postgres.
+### Backend URL
 
-- A S3 bucket for hosting uploaded pictures.
+(http://udagram-api-dev-env.eba-btrbwsmu.ap-southeast-2.elasticbeanstalk.com/)
 
-```
+---
 
-### Installation
+## Infrastructure Overview
 
-Provision the necessary AWS services needed for running the application:
+The project uses the following cloud services:
 
-1. In AWS, provision a publicly available RDS database running Postgres. <Place holder for link to classroom article>
-1. In AWS, provision a s3 bucket for hosting the uploaded files. <Place holder for tlink to classroom article>
-1. Export the ENV variables needed or use a package like [dotnev](https://www.npmjs.com/package/dotenv)/.
-1. From the root of the repo, navigate udagram-api folder `cd starter/udagram-api` to install the node_modules `npm install`. After installation is done start the api in dev mode with `npm run dev`.
-1. Without closing the terminal in step 1, navigate to the udagram-frontend `cd starter/udagram-frontend` to intall the node_modules `npm install`. After installation is done start the api in dev mode with `npm run start`.
+### Amazon S3
 
-## Testing
+Hosts the frontend application.
 
-This project contains two different test suite: unit tests and End-To-End tests(e2e). Follow these steps to run the tests.
+### AWS Elastic Beanstalk
 
-1. `cd starter/udagram-frontend`
-1. `npm run test`
-1. `npm run e2e`
+Hosts the backend API.
 
-There are no Unit test on the back-end
+### Amazon RDS PostgreSQL
 
-### Unit Tests:
+Stores application data.
 
-Unit tests are using the Jasmine Framework.
+### CircleCI
 
-### End to End Tests:
+Automates build and deployment.
 
-The e2e tests are using Protractor and Jasmine.
+---
 
-## Built With
+## Environment Variables
 
-- [Angular](https://angular.io/) - Single Page Application Framework
-- [Node](https://nodejs.org) - Javascript Runtime
-- [Express](https://expressjs.com/) - Javascript API Framework
+The project uses environment variables instead of hardcoded credentials.
 
-## License
+Variables include:
 
-[License](LICENSE.txt)
+- POSTGRES_HOST
+- POSTGRES_DB
+- POSTGRES_USERNAME
+- POSTGRES_PASSWORD
+- POSTGRES_PORT
+- AWS_BUCKET
+- AWS_REGION
+- JWT_SECRET
+- URL
+
+---
+
+## Deployment Process
+
+1. Push source code to GitHub.
+2. CircleCI pipeline starts automatically.
+3. Frontend is built.
+4. Backend is built.
+5. Frontend is deployed to Amazon S3.
+6. Backend is deployed to Elastic Beanstalk.
+7. Backend connects to Amazon RDS.
+
+---
+
+## Dependencies
+
+### Frontend
+
+- Angular 8
+- Ionic
+- TypeScript
+
+### Backend
+
+- Node.js
+- Express
+- Sequelize
+- PostgreSQL
+
+### Cloud Services
+
+- Amazon S3
+- Amazon RDS
+- Elastic Beanstalk
+- CircleCI
+
+---
+
+## Required Screenshots
+
+### CircleCI Successful Build
+
+![Circle CI](screenshots/circleCI.png)
+
+### Amazon RDS
+
+![Amazon RDS](screenshots/amazon_rds.png)
+
+### Amazon S3
+
+![Amazon S3](screenshots/amazon_s3.png)
+
+### Elastic Beanstalk
+
+![Elastic Beanstalk](screenshots/elastic_beanstalk.png)
+
+### Working Application
+
+![Udagram Deployed](screenshots/udagram.png)
+
+---
+
+## Author
+
+John Kyle Bersamina
