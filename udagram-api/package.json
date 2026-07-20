@@ -5,6 +5,7 @@
   "main": "www/server.js",
   "scripts": {
     "start": "node ./www/server.js",
+    "postinstall": "npm rebuild bcrypt --build-from-source",
     "tsc": "tsc",
     "dev": "ts-node-dev --respawn --transpileOnly ./src/server.ts",
     "prod": "tsc && node ./www/server.js",
