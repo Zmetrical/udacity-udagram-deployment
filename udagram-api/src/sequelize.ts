@@ -8,6 +8,12 @@ export const sequelize = new Sequelize({
   host: config.host,
   port: Number(process.env.POSTGRES_PORT || 5432),
 
+  pool: {
+    acquire: 10000,
+    idle: 1000,
+    max: 5,
+    min: 0
+  },
   dialect: "postgres",
 
   dialectOptions: {
