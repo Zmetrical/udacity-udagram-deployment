@@ -2,7 +2,7 @@
   "name": "udagram-api",
   "version": "2.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "www/server.js",
   "scripts": {
     "start": "node ./www/server.js",
     "tsc": "tsc",
@@ -10,16 +10,18 @@
     "prod": "tsc && node ./www/server.js",
     "clean": "rm -rf www/ || true",
     "build": "npm run clean && tsc && cp -rf src/config www/config && cp .npmrc www/.npmrc && cp package.json www/package.json && cd www && zip -r Archive.zip . && cd ..",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "npm run build"
+
   },
   "keywords": [],
   "author": "Gabriel Ruttner",
   "license": "ISC",
   "dependencies": {
-    "@types/bcrypt": "^3.0.0",
+    "@types/bcrypt": "^5.0.2",
     "@types/jsonwebtoken": "^8.3.2",
     "aws-sdk": "^2.429.0",
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.1.1",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
@@ -29,7 +31,7 @@
     "pg": "^7.9.0",
     "reflect-metadata": "^0.1.13",
     "sequelize": "^5.21.4",
-    "sequelize-typescript": "^1.1.0"
+    "sequelize-typescript": "^1.1.0bcrypt"
   },
   "devDependencies": {
     "@types/bluebird": "^3.5.26",
