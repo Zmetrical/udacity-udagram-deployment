@@ -2,7 +2,7 @@
   "name": "udagram-api",
   "version": "2.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "www/server.js",
   "scripts": {
     "start": "node ./www/server.js",
     "tsc": "tsc",
@@ -11,7 +11,7 @@
     "clean": "rm -rf www/ || true",
     "build": "npm run clean && tsc && cp -rf src/config www/config && cp .npmrc www/.npmrc && cp package.json www/package.json && cd www && zip -r Archive.zip . && cd ..",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "npm run build && eb use udagram-api-dev-env && eb deploy"
+    "deploy": "npm run build"
 
   },
   "keywords": [],
